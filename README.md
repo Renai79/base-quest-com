@@ -26,4 +26,5 @@ This project is owned by wallet: `0x0110ab9c9eB4B282cB33EeD49e03c8e44684504b`
 
 ## 🎥 Demo
 
-Demo video coming soon...
+🎬 Demo Video: https://youtu.be/7jgidGBmYjA
+
