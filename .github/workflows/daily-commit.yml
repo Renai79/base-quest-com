@@ -1,0 +1,29 @@
+name: Daily commit (auto)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # runs daily at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  daily-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set date
+        run: echo "TODAY=$(date -u +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Append today's date to daily.txt
+        run: |
+          mkdir -p logs
+          echo "${{ env.TODAY }}" >> logs/daily.txt
+
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: 'logs/daily.txt'
+          message: "chore: daily commit ${{ env.TODAY }}"
+          author_name: "Hemant"
+          author_email: "trading.renai@gmail.com"
