@@ -25,5 +25,5 @@ jobs:
         with:
           add: 'logs/daily.txt'
           message: "chore: daily commit ${{ env.TODAY }}"
-          author_name: "Hemant"
-          author_email: "trading.renai@gmail.com"
+          author_name: "Renai"
+          author_email: "140294481+Renai79@users.noreply.github.com"
